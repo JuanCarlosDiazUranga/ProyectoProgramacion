@@ -1,8 +1,8 @@
 package com.juancarlosdiaz.entities;
 
 public class Articulo {
-private String codigo;
-private Integer precio;
+    private String codigo;
+    private Integer precio;
 
     public Articulo(String codigo, Integer precio) {
         this.codigo = codigo;
