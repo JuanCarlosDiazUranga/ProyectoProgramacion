@@ -1,12 +1,38 @@
 package com.juancarlosdiaz.entities;
 
-public class Articulo {
-    private String codigo;
-    private Integer precio;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-    public Articulo(String codigo, Integer precio) {
+import java.util.ArrayList;
+import java.util.List;
+@JacksonXmlRootElement(localName = "articulo")
+public class Articulo {
+
+    @JacksonXmlProperty(isAttribute = true)
+    private String codigo;
+
+    @JacksonXmlProperty(isAttribute = true)
+    private Integer precio;
+    @JacksonXmlElementWrapper(localName = "categorias")
+    @JacksonXmlProperty(localName = "categoria")
+     private List<Categoria> categorias;
+
+    public Articulo(){}
+
+    public Articulo(String codigo, Integer precio,List<Categoria> categorias) {
         this.codigo = codigo;
         this.precio = precio;
+        if(categorias != null) {
+            this.categorias = categorias;
+        }
+        else this.categorias = new ArrayList<>();
+
+    }
+
+
+    public List<Categoria> getListaCategoria() {
+        return categorias;
     }
 
     public String getCodigo() {

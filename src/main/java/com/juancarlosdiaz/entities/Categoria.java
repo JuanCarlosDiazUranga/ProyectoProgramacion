@@ -1,18 +1,17 @@
 package com.juancarlosdiaz.entities;
 
-public class Categoria {
+public enum Categoria {
+   categoria1("cine"),categoria2("electricidad");
+
     private String nombre;
 
-    public Categoria(String nombre) {
-        this.nombre = nombre;
+    private  Categoria(String nombre){
+        this.nombre=nombre;
     }
-
-
-    public String getNombre() {
+    public  String getNombre(){
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+
+
 }

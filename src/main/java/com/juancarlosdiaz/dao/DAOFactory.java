@@ -12,7 +12,7 @@ public class DAOFactory {
 
 
     private static DAOFactory daoFactory;
-    private DAOArticulosXML daoclientes;
+    private DAOArticulosXML daoarticulos;
     private DAOTienda daoTienda;
     private DAOFactory(){}
 
@@ -22,11 +22,11 @@ public class DAOFactory {
         }
         return daoFactory;
     }
-    public DAOArticulos getDaoclientes(){
-        if (daoclientes==null){
-            daoclientes= new DAOArticulosXML();
+    public DAOArticulos getDAOarticulos(){
+        if (daoarticulos==null){
+            daoarticulos= new DAOArticulosXML();
         }
-        return  daoclientes;
+        return  daoarticulos;
     }
     private DAOTienda getDAOtienda(){
         if (daoTienda==null){
