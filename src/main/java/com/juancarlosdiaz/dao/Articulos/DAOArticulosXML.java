@@ -37,11 +37,11 @@ public class DAOArticulosXML implements  DAOArticulos {
     }
 
     @Override
-    public String crear(Articulo articulo) {
+    public void crear(Articulo articulo) {
         List<Articulo> articulos=getAll();
         articulos.add(articulo);
         save(articulos);
-        return articulo.getCodigo();
+
     }
 
     @Override
@@ -67,5 +67,15 @@ public class DAOArticulosXML implements  DAOArticulos {
             e.printStackTrace();
         }
         return data.getArticulos();
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public void actualizarArticulo(Articulo articulo) {
+
     }
 }

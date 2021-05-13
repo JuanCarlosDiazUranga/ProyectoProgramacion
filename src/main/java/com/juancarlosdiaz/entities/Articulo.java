@@ -1,11 +1,9 @@
 package com.juancarlosdiaz.entities;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.j256.ormlite.field.DatabaseField;
 
-import java.util.ArrayList;
-import java.util.List;
 @JacksonXmlRootElement(localName = "articulo")
 public class Articulo {
 
@@ -13,33 +11,29 @@ public class Articulo {
     private String codigo;
 
     @JacksonXmlProperty(isAttribute = true)
-    private Integer precio;
-    @JacksonXmlElementWrapper(localName = "categorias")
-    @JacksonXmlProperty(localName = "categoria")
-     private List<Categoria> categorias;
+    private Float precio;
+    @DatabaseField(foreign = true, columnName = "categoria", canBeNull = true)
+    @JacksonXmlProperty(isAttribute = true)
+   private  Categoria categoria;
 
-    public Articulo(){}
+    public Articulo  (){}
 
-    public Articulo(String codigo, Integer precio,List<Categoria> categorias) {
+    public Articulo(String codigo, Float precio,Categoria categoria) {
         this.codigo = codigo;
         this.precio = precio;
-        if(categorias != null) {
-            this.categorias = categorias;
-        }
-        else this.categorias = new ArrayList<>();
-
+       this.categoria=categoria;
     }
 
 
-    public List<Categoria> getListaCategoria() {
-        return categorias;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
     public String getCodigo() {
         return codigo;
     }
 
-    public Integer getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
 
@@ -48,6 +42,7 @@ public class Articulo {
         return "Articulo{" +
                 "codigo='" + codigo + '\'' +
                 ", precio=" + precio +
+                ", categoria=" + categoria +
                 '}';
     }
 }

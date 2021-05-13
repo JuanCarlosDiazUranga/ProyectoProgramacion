@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Controller
 public class ClientesController {
+    /*
     @GetMapping("/DosArticulos")
     public String readUsers(Model model) {
         List<Articulo> articulos = new ArrayList<>();
@@ -48,3 +49,6 @@ public class ClientesController {
         }
     }
 }
+
+     */
+    }

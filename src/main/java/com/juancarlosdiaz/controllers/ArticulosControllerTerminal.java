@@ -6,7 +6,9 @@ import com.juancarlosdiaz.entities.Articulo;
 import java.util.List;
 
 public class ArticulosControllerTerminal {
-    public void DosArticulos(){
+
+
+    /* public void DosArticulos(){
         System.out.println(DAOFactory.getInstance().getDAOarticulos().getAll());
        // System.out.println(DAOFactory.getInstance().getDaoclientes().getAll().get(1));
     }
@@ -19,4 +21,7 @@ public class ArticulosControllerTerminal {
             }
         }
     }
+}
+
+     */
 }
