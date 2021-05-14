@@ -2,7 +2,6 @@ package com.juancarlosdiaz.dao.Tiendas;
 
 
 import com.juancarlosdiaz.entities.Articulo;
-import com.juancarlosdiaz.entities.Tienda;
 
 import java.util.List;
 

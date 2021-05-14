@@ -1,7 +1,5 @@
 package com.juancarlosdiaz.gui.articulos;
 
-import com.juancarlosdiaz.dao.DAOFactory;
-import com.juancarlosdiaz.dao.Source;
 import com.juancarlosdiaz.entities.Articulo;
 
 import javax.swing.*;
@@ -37,7 +35,7 @@ public class GUIListaArticulos extends JFrame{
         for (int i = 0; i < articulos.size(); i++) {
             Articulo articulo = articulos.get(i);
             JLabel codigo = new JLabel(articulo.getCodigo());
-            JLabel precio = new JLabel(articulos.get(i).getPrecio());
+            JLabel precio = new JLabel(String.valueOf(articulos.get(i).getPrecio()));
             JCheckBox borrarcheak = new JCheckBox();
 
             JButton informacion = new JButton("Informacion");
@@ -52,9 +50,11 @@ public class GUIListaArticulos extends JFrame{
             jpanel.add(panel);
 
 
-            informacion.addAncestorListener(e -> {
+            informacion.addActionListener(e -> {
               JOptionPane.showMessageDialog(this, informacionMostrar((articulo) ), "ALERTA", PLAIN_MESSAGE);
             });
+
+
             borrarbutton.addActionListener(e -> {
                 if (borrarcheak.isSelected()) {
                     articulos.remove(articulo);

@@ -1,10 +1,5 @@
 package com.juancarlosdiaz.controllers;
 
-import com.juancarlosdiaz.dao.DAOFactory;
-import com.juancarlosdiaz.entities.Articulo;
-
-import java.util.List;
-
 public class ArticulosControllerTerminal {
 
 

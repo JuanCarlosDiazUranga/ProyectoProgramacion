@@ -14,7 +14,7 @@ public class DBConnectionSQL {
         String password = "admin";
         String host = "80.34.34.150";
         String port = "33062";
-        String database = "proyecto";
+        String database = "proyecto123";
 
         connection = DriverManager.getConnection("jdbc:mysql://"+ host +":"+port+"/"+database+"?"+"user="+user+"&password="+password,user,password);
     }

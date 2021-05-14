@@ -31,12 +31,7 @@ public class GUIEditarArticulo  extends JFrame{
     private void setHandlers() {
         cambiarButton.addActionListener(e -> {
             int input = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres guardarlo?", "Seleccione Opcion", JOptionPane.YES_NO_CANCEL_OPTION);
-            if (input == JOptionPane.YES_OPTION) {
-                dispose();
-            }
-            else  {
-                dispose();
-            }
+            dispose();
             System.out.println(input);
         });
         salirButton.addActionListener(e1 -> {

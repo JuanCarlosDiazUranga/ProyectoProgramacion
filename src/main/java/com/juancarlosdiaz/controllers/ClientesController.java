@@ -1,14 +1,7 @@
 package com.juancarlosdiaz.controllers;
 
-import com.juancarlosdiaz.dao.DAOFactory;
-import com.juancarlosdiaz.entities.Articulo;
-import com.juancarlosdiaz.entities.Categoria;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.List;
 @Controller
 public class ClientesController {
     /*

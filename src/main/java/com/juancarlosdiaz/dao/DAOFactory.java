@@ -9,8 +9,6 @@ import com.juancarlosdiaz.dao.Articulos.DAOArticulosSQL;
 import com.juancarlosdiaz.dao.Articulos.DAOArticulosXML;
 import com.juancarlosdiaz.dao.Tiendas.DAOTienda;
 
-import com.juancarlosdiaz.dao.Tiendas.DAOTiendas;
-
 import java.sql.SQLException;
 
 public class DAOFactory {

@@ -1,7 +1,5 @@
 package com.juancarlosdiaz.entities;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,21 +10,21 @@ public class Cliente {
 
 
     private  String id;
-    private  String nombre;
+    private final String nombre;
     private String cliente;
     private  String password;
     /**
      * es una lista de articulos deseados por un cliente
      */
-    private  List<Articulo> deseos;
+    private final List<Articulo> deseos;
     /**
      * es una lista de articulos comprados por un cliente
      */
-    private  List<Articulo> comprados;
+    private final List<Articulo> comprados;
     /**
      * es una lista de articulos que guarda en carrito un cliente
      */
-    private List<Articulo>  carrito;
+    private final List<Articulo>  carrito;
 
 
     public Cliente(String id, String nombre) {

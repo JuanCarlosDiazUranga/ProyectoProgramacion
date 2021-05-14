@@ -45,7 +45,7 @@ public class DAOArticulosORM implements DAOArticulos {
 
 
     @Override
-    public void eliminar(String codigo, Articulo articulo) {
+    public void eliminar(String codigo) {
         try {
             daoarticulosORM.deleteById(String.valueOf(codigo));
         } catch (SQLException throwables) {

@@ -16,7 +16,7 @@ public class DAOArticulosXML implements  DAOArticulos {
     public Articulo exists(String codigo) {
         List<Articulo> articulos = getAll();
         for (int i = 0; i < articulos.size(); i++) {
-            if (articulos.get(i).getCodigo() == codigo){
+            if (articulos.get(i).getCodigo().equals(codigo)){
                 Articulo poisibleArticulo = articulos.get(i);
                 return poisibleArticulo;
             }
@@ -45,11 +45,11 @@ public class DAOArticulosXML implements  DAOArticulos {
     }
 
     @Override
-    public void eliminar(String codigo, Articulo articulo) {
+    public void eliminar(String codigo) {
         List<Articulo> articulos = getAll();
         for (int i = 0; i < articulos.size(); i++) {
-            if (articulos.get(i).getCodigo() == codigo) {
-                articulos.remove(articulo);
+            if (articulos.get(i).getCodigo().equals(codigo)) {
+                articulos.remove(codigo);
                 save(articulos);
 
             }
