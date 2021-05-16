@@ -16,8 +16,7 @@ public class DAOArticulosSQL implements DAOArticulos{
         Articulo articulo =new Articulo();
         try {
             Statement statement = DBConnectionSQL.getInstance().createStatement();
-            ResultSet resultSet = statement.executeQuery("" +
-                    "select * from jugadores where codigo = " + Codigo + ";");
+            ResultSet resultSet = statement.executeQuery("select * from jugadores where codigo = " + Codigo + ";");
             while (resultSet.next()) {
 
                 String codigo = resultSet.getString("codigo");
@@ -118,14 +117,14 @@ public class DAOArticulosSQL implements DAOArticulos{
         try {
             Statement statement = DBConnectionSQL.getInstance().createStatement();
             String sql = "" +
-                    "UPDATE articulos SET precio='" + articulo.getPrecio() + "', categoria='" + articulo.getCategoria() + "' where ID = " + articulo.getCodigo();
+                    "UPDATE articulos SET precio='" + articulo.getPrecio() + "', categoria='" + articulo.getCategoria() + "' where codigo = " + articulo.getCodigo();
 
             statement.execute(sql);
 
         } catch (SQLException exception) {
 
             if (exception.getErrorCode() == 1062) {
-                System.err.println("Error al actualizar la oferta");
+                System.err.println("Error al actualizar el articulo");
             } else {
                 System.err.println(exception.getMessage());
             }

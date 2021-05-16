@@ -12,7 +12,7 @@ public class DAOArticulosSerializable extends DAOSerializable implements DAOArti
     private final List<Articulo> articulos;
 
     public DAOArticulosSerializable() {
-        super("articulos");
+        super("file");
         Object obj = load();
         if (obj == null) {
             this.articulos = new ArrayList<>();
