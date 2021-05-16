@@ -7,7 +7,7 @@ import java.util.List;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.juancarlosdiaz.db.DBConnectionORM;
-
+import com.juancarlosdiaz.entities.Categoria;
 
 
 public class DAOArticulosORM implements DAOArticulos {
@@ -18,6 +18,8 @@ public class DAOArticulosORM implements DAOArticulos {
         this.daoarticulosORM = DaoManager.createDao(
                 DBConnectionORM.getInstance(),
                 Articulo.class
+
+
         );
         DaoManager.registerDao(
                 DBConnectionORM.getInstance(),
@@ -72,6 +74,10 @@ public class DAOArticulosORM implements DAOArticulos {
 
     @Override
     public void actualizarArticulo(Articulo articulo) {
-
+        try {
+            daoarticulosORM.update(articulo);
+        } catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
     }
 }

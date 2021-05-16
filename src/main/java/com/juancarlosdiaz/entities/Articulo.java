@@ -3,14 +3,17 @@ package com.juancarlosdiaz.entities;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+
+@DatabaseTable(tableName = "articulos")
 @JacksonXmlRootElement(localName = "articulo")
 public class Articulo {
 
     @JacksonXmlProperty(isAttribute = true)
-
+    @DatabaseField(id = true)
     private String codigo;
-
+    @DatabaseField
     @JacksonXmlProperty(isAttribute = true)
     private Float precio;
     @DatabaseField(foreign = true, columnName = "categoria", canBeNull = true)

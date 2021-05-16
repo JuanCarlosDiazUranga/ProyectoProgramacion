@@ -12,8 +12,26 @@ import java.util.List;
 
 public class DAOArticulosSQL implements DAOArticulos{
     @Override
-    public Articulo exists(String codigo) {
-        return null;
+    public Articulo exists(String Codigo) {
+        Articulo articulo =new Articulo();
+        try {
+            Statement statement = DBConnectionSQL.getInstance().createStatement();
+            ResultSet resultSet = statement.executeQuery("" +
+                    "select * from jugadores where codigo = " + Codigo + ";");
+            while (resultSet.next()) {
+
+                String codigo = resultSet.getString("codigo");
+
+                Float precio = resultSet.getFloat("precio");
+
+                String nombre = String.valueOf(resultSet.getInt("categoria"));
+                Categoria categoria = new Categoria(nombre);
+                articulo.equals(new Articulo(codigo, precio,  categoria));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return articulo;
     }
 
     @Override
@@ -21,13 +39,14 @@ public class DAOArticulosSQL implements DAOArticulos{
         try {
             Statement statement = DBConnectionSQL.getInstance().createStatement();
             String categoria = null;
-
             if (articulo.getCategoria() != null) {
                 categoria = articulo.getCategoria().getNombre();
-            } else {
             }
-            statement.execute("insert into articulos (codigo,precio,categoria) " +
-                    "values ('" + articulo.getCodigo() + "','" + articulo.getPrecio() + "','" + categoria + ")" );
+            String sql = "INSERT INTO articulos (codigo, precio, categoria) " +
+                    "VALUES ('"+articulo.getCodigo()+"', '"+articulo.getPrecio()+"', '"+categoria+"');";
+
+
+            statement.execute(sql);
         } catch (SQLException exception) {
 
             if (exception.getErrorCode() == 1062) {

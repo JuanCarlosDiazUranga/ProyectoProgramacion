@@ -74,16 +74,9 @@ public class DAOArticulosXML implements  DAOArticulos {
 
     @Override
     public void clear() {
-        try {
-            Statement statement = DBConnectionSQL.getInstance().createStatement();
-            statement.execute("delete from articulos");
-        }catch (SQLException exception) {
-            if (exception.getErrorCode() == 1062) {
-                System.err.println("error lista de articulos");
-            } else {
-                System.err.println(exception.getMessage());
-            }
-        }
+        List<Articulo> articulos = getAll();
+        articulos.clear();
+        save(articulos);
     }
 
     @Override
