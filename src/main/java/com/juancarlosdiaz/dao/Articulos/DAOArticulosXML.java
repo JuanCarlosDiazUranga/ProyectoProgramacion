@@ -1,6 +1,7 @@
 package com.juancarlosdiaz.dao.Articulos;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.juancarlosdiaz.db.DBConnectionSQL;
 import com.juancarlosdiaz.entities.Articulo;
 import com.juancarlosdiaz.entities.Data;
 
@@ -8,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class DAOArticulosXML implements  DAOArticulos {
@@ -71,7 +74,16 @@ public class DAOArticulosXML implements  DAOArticulos {
 
     @Override
     public void clear() {
-
+        try {
+            Statement statement = DBConnectionSQL.getInstance().createStatement();
+            statement.execute("delete from articulos");
+        }catch (SQLException exception) {
+            if (exception.getErrorCode() == 1062) {
+                System.err.println("error lista de articulos");
+            } else {
+                System.err.println(exception.getMessage());
+            }
+        }
     }
 
     @Override

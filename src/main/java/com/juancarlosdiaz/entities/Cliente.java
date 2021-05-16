@@ -10,21 +10,21 @@ public class Cliente {
 
 
     private  String id;
-    private final String nombre;
-    private String cliente;
+    private String nombre;
+
     private  String password;
     /**
      * es una lista de articulos deseados por un cliente
      */
-    private final List<Articulo> deseos;
+    private List<Articulo> deseos;
     /**
      * es una lista de articulos comprados por un cliente
      */
-    private final List<Articulo> comprados;
+    private List<Articulo> comprados;
     /**
      * es una lista de articulos que guarda en carrito un cliente
      */
-    private final List<Articulo>  carrito;
+    private List<Articulo>  carrito;
 
 
     public Cliente(String id, String nombre) {
@@ -34,6 +34,7 @@ public class Cliente {
         this.comprados = new ArrayList<>();
         this.carrito = new ArrayList<>();
     }
+    public  Cliente(){}
 
     public String getId() {
 
@@ -44,13 +45,33 @@ public class Cliente {
         this.id = id;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDeseos(List<Articulo> deseos) {
+        this.deseos = deseos;
+    }
+
+    public void setComprados(List<Articulo> comprados) {
+        this.comprados = comprados;
+    }
+
+    public void setCarrito(List<Articulo> carrito) {
+        this.carrito = carrito;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
-    public String getCliente() {
-        return cliente;
-    }
+
 
     public String getPassword() {
         return password;
@@ -73,7 +94,6 @@ public class Cliente {
         return "Cliente{" +
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", cliente='" + cliente + '\'' +
                 ", password='" + password + '\'' +
                 ", deseos=" + deseos +
                 ", comprados=" + comprados +

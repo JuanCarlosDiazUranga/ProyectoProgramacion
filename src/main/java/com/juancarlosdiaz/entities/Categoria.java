@@ -8,7 +8,7 @@ public class Categoria {
     @JacksonXmlElementWrapper(localName = "nombre")
     private String nombre;
 
-    public Categoria(String nombre, Object o, Object o1, Object o2) {
+    public Categoria(  ) {
 
     }
 

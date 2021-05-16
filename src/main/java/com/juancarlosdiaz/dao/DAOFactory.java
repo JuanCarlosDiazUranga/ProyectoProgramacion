@@ -7,7 +7,7 @@ import com.juancarlosdiaz.dao.Articulos.DAOArticulos;
 import com.juancarlosdiaz.dao.Articulos.DAOArticulosORM;
 import com.juancarlosdiaz.dao.Articulos.DAOArticulosSQL;
 import com.juancarlosdiaz.dao.Articulos.DAOArticulosXML;
-import com.juancarlosdiaz.dao.Tiendas.DAOTienda;
+
 
 import java.sql.SQLException;
 
@@ -16,7 +16,7 @@ public class DAOFactory {
 
     private static DAOFactory daoFactory;
     private DAOArticulos daoarticulos;
-    private DAOTienda daoTienda;
+
     private DAOFactory(){}
 
     public static DAOFactory getInstance() {

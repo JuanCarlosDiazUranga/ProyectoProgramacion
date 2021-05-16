@@ -8,6 +8,7 @@ import com.j256.ormlite.field.DatabaseField;
 public class Articulo {
 
     @JacksonXmlProperty(isAttribute = true)
+
     private String codigo;
 
     @JacksonXmlProperty(isAttribute = true)
@@ -24,6 +25,17 @@ public class Articulo {
        this.categoria=categoria;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Categoria getCategoria() {
         return categoria;
