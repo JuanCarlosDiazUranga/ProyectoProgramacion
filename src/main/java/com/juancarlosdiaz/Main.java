@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println("Pulse 1");
+        System.out.println("elige una opcion");
         Scanner scanner = new Scanner(System.in);
         String opcion = scanner.nextLine();
         if(opcion.equals("1")){
